@@ -215,6 +215,14 @@ Node* DFS(Node* initial, int* cont)
     List* adjacentNodes = get_adj_nodes(firstNode);
 
     Node* currentNode = first(adjacentNodes);
+
+    while(currentNode != NULL)
+    {
+      push(stack, currentNode);
+      currentNode = next(adjacentNodes);
+    }
+
+    (*cont)++;
   }
   
   return NULL;

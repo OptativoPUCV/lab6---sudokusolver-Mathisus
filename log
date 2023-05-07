@@ -64,3 +64,9 @@ sudoku.c:217:11: error: unused variable ‘currentNode’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 3f546fb
+Sun 07 May 2023 03:00:02 AM UTC: 
+ sudoku.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ tests:  10|0
+total_score: 70/70
+3c50bc7
