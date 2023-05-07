@@ -43,9 +43,94 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_valid(Node* n)
+{
+  int validNumbers[10] = {0,0,0,0,0,0,0,0,0,0};
 
-    return 1;
+  int i,j;
+
+  for(i = 0; i < 9; i++)
+  {
+    for(j = 0; j < 9; j++)
+    {
+      int currentNumber = n->sudo[i][j];
+
+      if(currentNumber != 0)
+      {
+        if(validNumbers[currentNumber] == 0)
+        {
+          validNumbers[currentNumber] = 1;
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+
+    for(int k = 0; k < 10; k++)
+    {
+      validNumbers[k] = 0;
+    }
+  }
+
+  for(i = 0; i < 9; i++)
+  {
+    for(j = 0; j < 9; j++)
+    {
+      int currentNumber = n->sudo[j][i];
+
+      if(currentNumber != 0)
+      {
+        if(validNumbers[currentNumber] == 0)
+        {
+          validNumbers[currentNumber] = 1;
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+
+    for(int k = 0; k < 10; k++)
+    {
+      validNumbers[k] = 0;
+    }
+  }
+
+  for(int k = 0; k < 9; k++)
+  {
+    int p;
+
+    for(p = 0; p < 9; p++)
+    {
+      int x = (k / 3) * 3 + (p / 3);
+      int y = (k % 3) * 3 + (p % 3);
+
+      int currentNumber = n->sudo[x][y];
+
+      if(currentNumber != 0)
+      {
+        if(validNumbers[currentNumber] == 0)
+        {
+          validNumbers[currentNumber] = 1;
+        }
+        else
+        {
+          return 0;
+        }
+      }
+    }
+
+    for(int k = 0; k < 10; k++)
+    {
+      validNumbers[k] = 0;
+    }
+  }
+
+  return 1;
+
 }
 
 
