@@ -139,7 +139,7 @@ List* get_adj_nodes(Node* n)
   List* list=createList();
 
   int i,j,k;
-  int encontrado = 0;
+  int found = 0;
 
   for(i = 0; i < 9; i++)
   {
@@ -147,7 +147,7 @@ List* get_adj_nodes(Node* n)
     {
       if(n->sudo[i][j] == 0)
       {
-        encontrado = 1;
+        found = 1;
 
         for(k = 1; k <= 9; k++)
         {
@@ -168,7 +168,7 @@ List* get_adj_nodes(Node* n)
       }
     }
 
-    if(encontrado)
+    if(found)
     {
       break;
     }
