@@ -53,3 +53,14 @@ Sun 07 May 2023 02:57:43 AM UTC:
  tests:  7|1
 total_score: 55/70
 4d24679
+Sun 07 May 2023 02:59:05 AM UTC: 
+ sudoku.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:217:11: error: unused variable ‘currentNode’ [-Werror=unused-variable]
+  217 |     Node* currentNode = first(adjacentNodes);
+      |           ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3f546fb

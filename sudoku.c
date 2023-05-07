@@ -211,6 +211,10 @@ Node* DFS(Node* initial, int* cont)
     {
       return firstNode;
     }
+
+    List* adjacentNodes = get_adj_nodes(firstNode);
+
+    Node* currentNode = first(adjacentNodes);
   }
   
   return NULL;
